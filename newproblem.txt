@@ -1,0 +1,17 @@
+
+SELECT 
+    f.depo_id,
+    f.depo_ky,
+    b.position_id,
+    b.position_type_id,
+    d.security_id,
+    c.currency_id,
+    c.currency_ky,
+    d.description,
+    e.position_type
+FROM
+    t_depository F inner join t_position  B 
+    on F.depo_id = B.depo_id inner join t_currency  C 
+    on B.currency_id=C.currency_id inner join t_security  D 
+    on B.security_id=D.security_id inner join t_positiontype  e 
+    ON b.position_type_id = e.position_type_id;
